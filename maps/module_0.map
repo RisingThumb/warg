@@ -1,0 +1,17 @@
+// Game: Qodot
+// Format: Valve
+// entity 0
+{
+"mapversion" "220"
+"classname" "worldspawn"
+"_tb_textures" "trenchbroom/textures/bricks"
+// brush 0
+{
+( -112 80 -16 ) ( -112 81 -16 ) ( -112 80 -15 ) bricks/bricks_cyan_1 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -112 80 -16 ) ( -112 80 -15 ) ( -111 80 -16 ) bricks/bricks_cyan_1 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -112 80 -16 ) ( -111 80 -16 ) ( -112 81 -16 ) bricks/bricks_cyan_1 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 16 208 1984 ) ( 16 209 1984 ) ( 17 208 1984 ) bricks/bricks_cyan_1 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 16 208 16 ) ( 17 208 16 ) ( 16 208 17 ) bricks/bricks_cyan_1 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 16 208 16 ) ( 16 208 17 ) ( 16 209 16 ) bricks/bricks_cyan_1 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+}

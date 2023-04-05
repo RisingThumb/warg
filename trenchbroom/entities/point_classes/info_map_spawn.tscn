@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=1]
+[ext_resource path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" type="Resource" id=7]
+[ext_resource path="res://trenchbroom/entities/point_classes/info_map_spawn.gd" type="Script" id=8]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[node name="info_map_spawn" type="Spatial"]
+script = ExtResource( 8 )
+
+[node name="QodotMap" type="Spatial" parent="."]
+script = ExtResource( 1 )
+map_file = "/home/odst/Programming/GodotProjects/RetroFPSGame/maps/module_0.map"
+inverse_scale_factor = 64.0
+entity_fgd = ExtResource( 7 )
+base_texture_dir = "res://trenchbroom/textures"
+texture_file_extensions = PoolStringArray( "png" )
+worldspawn_layers = [  ]
+brush_clip_texture = "special/clip"
+face_skip_texture = "special/skip"
+texture_wads = [  ]
+material_file_extension = "tres"
+default_material_albedo_uniform = ""
+default_material = SubResource( 1 )
+uv_unwrap_texel_size = 1.0
+print_profiling_data = false
+use_trenchbroom_group_hierarchy = false
+tree_attach_batch_size = 16
+set_owner_batch_size = 16

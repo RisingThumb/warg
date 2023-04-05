@@ -1,0 +1,16 @@
+newmtl JunkTextures/mp_diff_red
+newmtl prototype/128_blood_2
+map_Kd textures/prototype/128_blood_2.png
+
+newmtl prototype/128_blood_3
+map_Kd textures/prototype/128_blood_3.png
+
+newmtl prototype/128_blue_2
+map_Kd textures/prototype/128_blue_2.png
+
+newmtl prototype/128_cyan_2
+map_Kd textures/prototype/128_cyan_2.png
+
+newmtl prototype/128_grey_3
+map_Kd textures/prototype/128_grey_3.png
+

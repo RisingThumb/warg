@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="PanoramaSky" id=19]
+
+[sub_resource type="Environment" id=3]
+background_mode = 1
+background_sky = SubResource( 19 )
+background_sky_orientation = Basis( 0.87462, -0.48481, 0, 0.477444, 0.861332, 0.173648, -0.0841863, -0.151876, 0.984808 )
+background_sky_rotation = Vector3( -0.174533, 0, 0.506145 )
+background_sky_rotation_degrees = Vector3( -10, 0, 29 )
+background_color = Color( 0.113725, 0.00392157, 0.109804, 1 )
+ambient_light_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+fog_color = Color( 0.192157, 0.537255, 0.886275, 1 )
+fog_sun_color = Color( 0.94902, 0.698039, 0.2, 1 )
+fog_depth_curve = 0.615572
+fog_transmit_curve = 42.2243
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+
+[sub_resource type="Animation" id=7]
+resource_name = "SkyboxAnim"
+length = 60.0
+loop = true
+step = 0.5
+
+[node name="3DSkybox" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.849239, -1.26546e-08, 0.528009, -0.261574, 0.868666, 0.420711, -0.458663, -0.495398, 0.737705, 0, 0, 0 )
+
+[node name="Skybox_Camera" type="Camera" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "SkyboxAnim"
+anims/RESET = SubResource( 6 )
+anims/SkyboxAnim = SubResource( 7 )
+
+[node name="StuffInSky" type="Spatial" parent="."]

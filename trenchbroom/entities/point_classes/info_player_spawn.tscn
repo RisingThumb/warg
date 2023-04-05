@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://trenchbroom/entities/point_classes/info_player_spawn.gd" type="Script" id=1]
+[ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
+
+[node name="info_player_spawn" type="Spatial"]
+script = ExtResource( 1 )
+player = ExtResource( 2 )

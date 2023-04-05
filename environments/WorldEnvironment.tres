@@ -1,0 +1,11 @@
+[gd_resource type="Environment" format=2]
+
+[resource]
+background_sky_custom_fov = 90.0
+background_color = Color( 1, 1, 1, 1 )
+background_energy = 0.0
+ambient_light_sky_contribution = 0.0
+fog_enabled = true
+tonemap_mode = 2
+tonemap_exposure = 1.86
+tonemap_white = 7.0
