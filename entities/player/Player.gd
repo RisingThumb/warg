@@ -22,6 +22,9 @@ onready var body = $Body
 onready var head = $Body/Head
 onready var camera = $Body/Head/Camera
 onready var bodyCollider = $CollisionShape
+onready var headRaycast = $Body/Head/Camera/RayCast
+onready var HUDTextAnimator = $TopHUDPlayer
+onready var HUDBottomTextAnimator = $BottomHUDPlayer
 onready var head_position: Vector3 = head.translation
 onready var body_euler_y = body.global_transform.basis.get_euler().y
 
@@ -41,6 +44,7 @@ var time_in_air: float = 0.0
 var is_jumping: bool = false
 var noclip = false
 var noclip_speed = 0.1
+var showing_text = false;
 
 func toggle_noclip():
 	noclip = !noclip
@@ -49,6 +53,8 @@ func toggle_noclip():
 
 func _ready():
 	GlobalVariables.currentPlayer = self
+	headRaycast.add_exception(self)
+	headRaycast.add_exception(bodyCollider)
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -85,6 +91,31 @@ func _process(delta: float) -> void:
 	camera.translation.z = tr.origin.z
 	camera.rotation.x = head.rotation.x
 	camera.rotation.y = body.rotation.y + body_euler_y
+	
+	process_raycast_sight(delta)
+
+func process_raycast_sight(_delta):
+	headRaycast.force_raycast_update()
+	if headRaycast.is_colliding():
+		var collider = headRaycast.get_collider();
+		if collider.get("hover_text") != null:
+			$TextureRect/TopText/ColorRect/HBoxContainer/Label.text = collider.hover_text
+			if !showing_text && !HUDTextAnimator.is_playing():
+				HUDTextAnimator.play("showText")
+				showing_text = true
+			if collider.get("interactable") != 0 && Input.is_action_just_pressed("action_activate"):
+				collider.call("raycastedByPlayer")
+				do_bottom_text(collider.get("interact_text"));
+		elif showing_text && !HUDTextAnimator.is_playing():
+			HUDTextAnimator.play("hideText")
+			showing_text = false
+	elif showing_text && !HUDTextAnimator.is_playing():
+			HUDTextAnimator.play("hideText")
+			showing_text = false
+
+func do_bottom_text(text: String):
+	$TextureRect/BottomText/ColorRect/HBoxContainer/Label.text = text;
+	HUDBottomTextAnimator.play("showText")
 
 func _input(event):
 	#get mouse input for camera rotation

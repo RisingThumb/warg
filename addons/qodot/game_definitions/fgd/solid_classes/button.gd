@@ -24,7 +24,6 @@ func set_properties(new_properties: Dictionary) -> void:
 		update_properties()
 
 func update_properties() -> void:
-	return
 	if 'axis' in properties:
 		axis = properties.axis.normalized()
 

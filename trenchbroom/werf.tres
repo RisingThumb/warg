@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=6 format=2]
 
 [ext_resource path="res://trenchbroom/entities/point_classes/info_player_spawn.tres" type="Resource" id=1]
 [ext_resource path="res://trenchbroom/entities/point_classes/info_map_spawn.tres" type="Resource" id=2]
+[ext_resource path="res://trenchbroom/entities/solid_classes/hover_text.tres" type="Resource" id=3]
 [ext_resource path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" type="Script" id=5]
 [ext_resource path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" type="Resource" id=8]
 
@@ -11,4 +12,4 @@ export_file = false
 target_folder = "/home/odst/.TrenchBroom/games/Qodot/"
 fgd_name = "werf"
 base_fgd_files = [ ExtResource( 8 ) ]
-entity_definitions = [ ExtResource( 1 ), ExtResource( 2 ) ]
+entity_definitions = [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ]

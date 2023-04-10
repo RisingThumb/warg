@@ -2858,10 +2858,11 @@
 {
 "classname" "hover_text"
 "hover_text" "Something"
-"target" "platform_b1"
+"" ""
 "delete_on_interact" "1"
 "interactable" "1"
 "interact_text" "INTERACTION!"
+"property 1" ""
 // brush 0
 {
 ( -800 192 208 ) ( -800 193 208 ) ( -800 192 209 ) prototype/128_honey_1 0 0 0 1 1
